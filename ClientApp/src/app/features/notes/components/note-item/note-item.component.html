@@ -1,0 +1,40 @@
+<div class="cyber-note">
+  <!-- CRT Glow Layer -->
+  <div class="crt-glow"></div>
+
+  <!-- Main Card -->
+  <div class="cyber-card">
+    <!-- Header with Glitch Text -->
+    <div class="cyber-header">
+      <h5 class="cyber-title" [attr.data-text]="note.title">
+        {{ note.title }}
+      </h5>
+      <div class="cyber-corner"></div>
+    </div>
+
+    <!-- Content with Scanlines -->
+    <div class="cyber-content">
+      <p>{{ note.content }}</p>
+      <!-- Binary Rain -->
+      <div class="binary-rain">01001000 01000001 01000011 01001011</div>
+    </div>
+
+    <!-- Hover Actions -->
+    <div class="cyber-overlay">
+      <div class="cyber-actions">
+        <a [routerLink]="['/notes', note.id]" class="cyber-btn cyber-view">
+          <span class="pixel-icon">👁️</span> VIEW
+        </a>
+        <a
+          [routerLink]="['/notes', note.id, 'edit']"
+          class="cyber-btn cyber-edit"
+        >
+          <span class="pixel-icon">✏️</span> EDIT
+        </a>
+        <button class="cyber-btn cyber-delete" (click)="onDelete.emit(note.id)">
+          <span class="pixel-icon">🗑️</span> DELETE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

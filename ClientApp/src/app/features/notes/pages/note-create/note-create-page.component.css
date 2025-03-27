@@ -1,0 +1,37 @@
+@media (max-width: 1000px) {
+  .cyber-container {
+    max-width: inherit !important;
+  }
+}
+
+/* Main container styling */
+.cyber-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #111;
+  color: #00ffaa;
+  border: 2px solid #00ffaa;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffaa, 0 0 30px rgba(0, 255, 170, 0.5);
+  text-align: center;
+  max-width: 30%;
+  margin: auto;
+}
+
+/* Cyberpunk-style title */
+.cyber-title {
+  font-size: 2rem;
+  color: #00ffaa;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #00ffaa, 0 0 20px rgba(0, 255, 170, 0.8);
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+}
+
+/* Cyberpunk effect for the form */
+.cyber-form {
+  width: 100%;
+}

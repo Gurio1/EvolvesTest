@@ -1,0 +1,41 @@
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      formControlName="title"
+      placeholder="Enter title"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea
+      class="form-control"
+      id="content"
+      formControlName="content"
+      rows="3"
+      placeholder="Enter content"
+    ></textarea>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button
+      type="submit"
+      class="cyber-button cyber-primary"
+      [disabled]="!noteForm.valid"
+    >
+      <span class="button-text">{{ note ? "UPDATE" : "CREATE" }}</span>
+      <span class="button-glow"></span>
+      <span class="button-pixel-corner"></span>
+    </button>
+
+    <div class="ms-auto">
+      <a class="cyber-button cyber-back" (click)="goBack()" role="button">
+        <span class="button-text">BACK</span>
+        <span class="button-glow"></span>
+        <span class="button-pixel-corner"></span>
+      </a>
+    </div>
+  </div>
+</form>

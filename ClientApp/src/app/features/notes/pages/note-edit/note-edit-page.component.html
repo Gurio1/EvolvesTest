@@ -1,0 +1,26 @@
+<div class="cyber-edit-container">
+  <!-- Terminal-style header -->
+  <header class="cyber-header">
+    <div class="title-group">
+      <div class="cyber-header-glitch">EDIT_NOTE.EXE</div>
+      <div class="cyber-header-subtext">ID: {{ note?.id }}</div>
+    </div>
+  </header>
+
+  <!-- Compact form container -->
+  <div class="cyber-form-wrapper">
+    <div class="cyber-form-bg">
+      <img
+        src="https://i.imgur.com/X3mJwJq.jpg"
+        class="cyber-bg-image"
+        alt="cyberpunk background"
+      />
+      <div class="cyber-form-overlay"></div>
+    </div>
+    <app-note-form
+      *ngIf="note"
+      [note]="note"
+      (formSubmit)="updateNote($event)"
+    ></app-note-form>
+  </div>
+</div>

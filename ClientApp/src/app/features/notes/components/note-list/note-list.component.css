@@ -1,0 +1,55 @@
+.cyber-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.cyber-note {
+  min-width: 15rem;
+  flex: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Center the button container */
+.cyber-create-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Cyberpunk-styled button */
+.cyber-create-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00ffcc;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #00ffcc;
+  border-radius: 6px;
+  background: #111; /* Dark cyberpunk background */
+  box-shadow: 0 0 8px #00ffcc;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Neon Glow Effect */
+.cyber-create-button:hover {
+  background: #00ffcc;
+  color: #111;
+  box-shadow: 0 0 15px #00ffcc, 0 0 30px rgba(0, 255, 204, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Pixel-style icon */
+.pixel-icon {
+  font-size: 18px;
+  color: inherit;
+}

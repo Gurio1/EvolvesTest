@@ -1,0 +1,17 @@
+<div>
+  <div class="cyber-create-container">
+    <a routerLink="/notes/create" class="cyber-create-button">
+      <span class="pixel-icon">✧</span> CREATE NEW NOTES
+    </a>
+  </div>
+
+  <div class="cyber-items">
+    <app-note-item
+      *ngFor="let note of notes"
+      [note]="note"
+      (onDelete)="deleteNote($event)"
+      class="cyber-note"
+    >
+    </app-note-item>
+  </div>
+</div>

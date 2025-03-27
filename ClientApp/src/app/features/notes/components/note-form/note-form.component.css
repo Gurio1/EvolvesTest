@@ -1,0 +1,70 @@
+@media (max-width: 600px) {
+  .cyber-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.cyber-button {
+  display: block;
+  position: relative;
+  padding: 12px 24px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin: 5px;
+  border: none;
+  color: #00f0ff;
+}
+
+.button-pixel-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #00f0ff;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.cyber-button .button-pixel-corner:nth-child(3) {
+  top: 0;
+  right: 0;
+}
+
+.cyber-button .button-pixel-corner:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.cyber-primary {
+  background: linear-gradient(135deg, #6e00ff 0%, #ff00f5 100%);
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  border: 1px solid #00f0ff;
+  box-shadow: 0 0 10px rgba(110, 0, 255, 0.8),
+    inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.cyber-primary:disabled {
+  background: #333;
+  color: #666;
+  text-shadow: none;
+  border: 1px solid #555;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cyber-back {
+  margin-left: auto;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8);
+  border: 1px solid #ff00f5;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.cyber-back:hover {
+  background: linear-gradient(135deg, #333 0%, #555 100%);
+}
