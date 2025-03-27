@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.1.66" />
+        <PackageReference Include="FastEndpoints" Version="5.35.0" />
+        <PackageReference Include="FastEndpoints.Swagger" Version="5.35.0" />
+        <PackageReference Include="MediatR" Version="12.4.1" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3"/>
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Features\Notes\Get\GetNoteByIdRequest.cs">
+        <DependentUpon>GetNoteByIdEndpoint.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Features\Notes\Create\CreateNoteRequest.cs">
+        <DependentUpon>CreateNoteEndpoint.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Features\Notes\Edit\EditNoteRequest.cs">
+        <DependentUpon>EditNoteEndpoint.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Features\Notes\Delete\DeleteNoteRequest.cs">
+        <DependentUpon>DeleteNoteEndpoint.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>
