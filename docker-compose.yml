@@ -1,0 +1,28 @@
+﻿services:
+  backend:
+    image: api
+    build:
+      context: .
+      dockerfile: Dockerfile  # Path to the backend Dockerfile
+    ports:
+      - "5221:5221"  # Exposing port 80 inside the container as port 5000 on your machine
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - app-network  # To allow communication between frontend and backend
+
+  frontend:
+    image: angular
+    build:
+      context: ./ClientApp
+      dockerfile: Dockerfile  # Path to the frontend Dockerfile
+    ports:
+      - "4200:80"  # Expose frontend to port 4200 on your machine
+    depends_on:
+      - backend
+    networks:
+      - app-network  # To allow communication between frontend and backend
+
+networks:
+  app-network:  # Custom network for container communication
+    driver: bridge

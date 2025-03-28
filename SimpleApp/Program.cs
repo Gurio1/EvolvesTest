@@ -9,6 +9,11 @@ var config = builder.Configuration;
 builder.Services.AddFastEndpoints()
     .SwaggerDocument(o => o.ShortSchemaNames = true);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5221); // Listen on all IPs, on port 5221
+});
+
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
@@ -21,7 +26,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
         policyBuilder =>
         {
-            policyBuilder.WithOrigins("https://localhost:4200","http://localhost:4200","http://192.168.0.5:4200","https://192.168.0.5:4200")
+            policyBuilder.WithOrigins("http://localhost:4200")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
